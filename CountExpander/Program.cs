@@ -25,7 +25,7 @@ namespace CountExpander
         static void Main(string[] args)
         {
             // Check number of arguments.
-            if (args.Length != 2)
+            if (args.Length < 2)
             {
                 Console.WriteLine("Usage: Guesser <in_db> <out_db>");
                 return;
