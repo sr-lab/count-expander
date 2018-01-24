@@ -38,6 +38,13 @@ namespace CountExpander
                 return;
             }
 
+            // Check for unique only flag.
+            var uniqueOnly = false;
+            if (args.Length > 2 && args[2] == "-u")
+            {
+                uniqueOnly = true;
+            }
+
             var output = new StreamWriter(args[1]);
 
             var lines = ReadFileAsLines(args[0]);
@@ -64,7 +71,7 @@ namespace CountExpander
                         }
                     }
                 }
-                var g = int.Parse(countBuffer);
+                var g = uniqueOnly ? 1 : int.Parse(countBuffer);
                 Console.WriteLine($"{g}:{passBuffer}");
                 for (int i = 0; i < g; i++)
                 {
