@@ -10,7 +10,6 @@ Some password lists that can be found online are formatted like this:
 29 monkey1
 28 iloveyou1
 24 myspace1
-24 fuckyou1
 18 number1
 18 football1
 17 nicole1
