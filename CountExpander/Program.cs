@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CountExpander
 {
@@ -45,19 +42,24 @@ namespace CountExpander
                 uniqueOnly = true;
             }
 
+            // Open output stream.
             var output = new StreamWriter(args[1]);
 
+            // For each line in the input file.
             var lines = ReadFileAsLines(args[0]);
             foreach (var line in lines)
             {
+                // Buffer count and password.
                 var countBuffer = "";
                 var passBuffer = "";
+
+                // Put count and password into buffers.
                 var inCountBuffer = true;
-                foreach (var c in line)
+                foreach (var chr in line)
                 {
-                    if (char.IsDigit(c) && inCountBuffer)
+                    if (char.IsDigit(chr) && inCountBuffer)
                     {
-                        countBuffer += c;
+                        countBuffer += chr;
                     }
                     else
                     {
@@ -67,18 +69,25 @@ namespace CountExpander
                         }
                         else
                         {
-                            passBuffer += c;
+                            passBuffer += chr;
                         }
                     }
                 }
-                var g = uniqueOnly ? 1 : int.Parse(countBuffer);
-                Console.WriteLine($"{g}:{passBuffer}");
-                for (int i = 0; i < g; i++)
+                
+                // If unique only flag passed, keep count to 1.
+                var totalCount = uniqueOnly ? 1 : int.Parse(countBuffer);
+
+                // Print count against password.
+                Console.WriteLine($"{totalCount}:{passBuffer}");
+
+                // Write password to output `count` times.
+                for (int i = 0; i < totalCount; i++)
                 {
                     output.WriteLine(passBuffer);
                 }
             }
 
+            // Flush and close output stream.
             output.Flush();
             output.Close();
         }
