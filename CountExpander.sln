@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountExpander", "CountExpander\CountExpander.csproj", "{AA45C7D8-9DE2-401A-9AC3-C823450E7296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountExpander.Shared", "CountExpander.Shared\CountExpander.Shared.csproj", "{DE08AF8E-1E47-4337-A633-B0920E74D1EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountExpander.Compressor", "CountExpander.Compressor\CountExpander.Compressor.csproj", "{C52C540B-1F38-4B57-B6BC-BC06C3BB66B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{AA45C7D8-9DE2-401A-9AC3-C823450E7296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA45C7D8-9DE2-401A-9AC3-C823450E7296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA45C7D8-9DE2-401A-9AC3-C823450E7296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE08AF8E-1E47-4337-A633-B0920E74D1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE08AF8E-1E47-4337-A633-B0920E74D1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE08AF8E-1E47-4337-A633-B0920E74D1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE08AF8E-1E47-4337-A633-B0920E74D1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C52C540B-1F38-4B57-B6BC-BC06C3BB66B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C52C540B-1F38-4B57-B6BC-BC06C3BB66B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C52C540B-1F38-4B57-B6BC-BC06C3BB66B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C52C540B-1F38-4B57-B6BC-BC06C3BB66B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95B319D7-527C-46EB-8D2D-B432066897DA}
 	EndGlobalSection
 EndGlobal

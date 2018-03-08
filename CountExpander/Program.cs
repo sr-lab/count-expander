@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CountExpander.Shared;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -6,19 +7,6 @@ namespace CountExpander
 {
     class Program
     {
-        /// <summary>
-        /// Reads a file as lines, returning it as an array of strings.
-        /// </summary>
-        /// <param name="filename">The filename of the file to read.</param>
-        /// <returns></returns>
-        private static string[] ReadFileAsLines(string filename)
-        {
-            return File.ReadAllText(filename)
-                .Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None)
-                .Select(x => x.TrimStart().TrimEnd(new[] { '\r', '\n' }))
-                .ToArray();
-        }
-
         static void Main(string[] args)
         {
             // Check number of arguments.
@@ -46,7 +34,7 @@ namespace CountExpander
             var output = new StreamWriter(args[1]);
 
             // For each line in the input file.
-            var lines = ReadFileAsLines(args[0]);
+            var lines = FileUtils.ReadFileAsLines(args[0]);
             foreach (var line in lines)
             {
                 // Buffer count and password.
