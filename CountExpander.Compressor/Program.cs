@@ -12,6 +12,13 @@ namespace CountExpander.Compressor
     {
         static void Main(string[] args)
         {
+            // Check argument list is correct length.
+            if (args.Length < 1)
+            {
+                Console.WriteLine("Usage: CountExpander.Compressor.exe <in_file>");
+                return;
+            }
+
             // Check file exists.
             if (!File.Exists(args[0]))
             {
