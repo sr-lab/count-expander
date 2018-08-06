@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CountExpander.Shared
 {
+    /// <summary>
+    /// Contains file I/O helper methods.
+    /// </summary>
     public class FileUtils
     {
         /// <summary>
