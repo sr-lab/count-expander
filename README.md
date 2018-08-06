@@ -1,5 +1,5 @@
 # Count Expander
-Re-hydrates password lists that contain counts.
+Re-hydrates password lists that contain counts. Also contains a utility that will do the opposite and dehydrate a raw password dump into a file of counts (frequencies) against passwords.
 
 ## Overview
 Some password lists that can be found online are formatted like this:
@@ -23,11 +23,50 @@ Some password lists that can be found online are formatted like this:
 ...
 ```
 
-This utility "expands" or "rehydrates" these password list back into their full form.
+This utility "expands" or "rehydrates" these password list back into their full form. For instance:
+
+```
+3 password
+2 hunter
+3 nicole
+```
+
+Would become:
+
+```
+password
+password
+password
+hunter
+hunter
+nicole
+nicole
+nicole
+```
 
 ## Usage
 Use the utility like this:
 
 ```
-.\CountExpander.exe <in_db> <out_db> [unique_only]
+.\CountExpander.exe <in_file> [unique_only]
 ```
+
+The options are quite straightforward:
+
+| Option      | Values      | Required? | Description                                                      |
+|-------------|-------------|-----------|------------------------------------------------------------------|
+| in_file     | Any         | Yes       | The dehydrated password file.                                    |
+| unique_only | Flag (`-u`) | No        | Whether or not to output unique passwords only, defaults to off. |
+
+## Compressor
+The compressor utility is used in the same way. It will take raw, newline-delimited password list as a file and spit out a file which contains frequencies against passwords. Use it thusly:
+
+```
+.\CountExpander.Compressor.exe <in_file>
+```
+
+The options are quite straightforward:
+
+| Option      | Values      | Required? | Description            |
+|-------------|-------------|-----------|------------------------|
+| in_file     | Any         | Yes       | The raw password file. |
