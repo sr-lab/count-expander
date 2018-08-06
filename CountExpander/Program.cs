@@ -1,7 +1,7 @@
-﻿using CountExpander.Shared;
-using System;
+﻿using System;
 using System.IO;
-using System.Linq;
+
+using CountExpander.Shared;
 
 namespace CountExpander
 {

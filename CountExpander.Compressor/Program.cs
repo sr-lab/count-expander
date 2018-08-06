@@ -1,10 +1,8 @@
-﻿using CountExpander.Shared;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using CountExpander.Shared;
 
 namespace CountExpander.Compressor
 {
