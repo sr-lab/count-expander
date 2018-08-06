@@ -12,7 +12,7 @@ namespace CountExpander
             // Check number of arguments.
             if (args.Length < 2)
             {
-                Console.WriteLine("Usage: Guesser <in_db> <out_db> [unique_only]");
+                Console.WriteLine("Usage: CountExpander.exe <in_file> [unique_only]");
                 return;
             }
 
@@ -25,13 +25,10 @@ namespace CountExpander
 
             // Check for unique only flag.
             var uniqueOnly = false;
-            if (args.Length > 2 && args[2] == "-u")
+            if (args.Length > 1 && args[1] == "-u")
             {
                 uniqueOnly = true;
             }
-
-            // Open output stream.
-            var output = new StreamWriter(args[1]);
 
             // For each line in the input file.
             var lines = FileUtils.ReadFileAsLines(args[0]);
@@ -71,13 +68,9 @@ namespace CountExpander
                 // Write password to output `count` times.
                 for (int i = 0; i < totalCount; i++)
                 {
-                    output.WriteLine(passBuffer);
+                    Console.WriteLine(passBuffer);
                 }
             }
-
-            // Flush and close output stream.
-            output.Flush();
-            output.Close();
         }
     }
 }
