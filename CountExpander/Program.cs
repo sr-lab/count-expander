@@ -10,7 +10,7 @@ namespace CountExpander
         static void Main(string[] args)
         {
             // Check number of arguments.
-            if (args.Length < 2)
+            if (args.Length < 1)
             {
                 Console.WriteLine("Usage: CountExpander.exe <in_file> [unique_only]");
                 return;
