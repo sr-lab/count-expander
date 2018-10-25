@@ -74,9 +74,6 @@ namespace CountExpander
                     continue;
                 }
 
-                // Print count against password.
-                // Console.WriteLine($"{totalCount}:{passBuffer}");
-
                 // Write password to output `count` times.
                 for (int i = 0; i < totalCount; i++)
                 {
