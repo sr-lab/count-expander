@@ -58,9 +58,18 @@ namespace CountExpander
                         }
                     }
                 }
-                
+
                 // If unique only flag passed, keep count to 1.
-                var totalCount = uniqueOnly ? 1 : int.Parse(countBuffer);
+                var totalCount = 0;
+                if (uniqueOnly)
+                {
+                    totalCount = 1;
+                }
+                else if (!int.TryParse(countBuffer, out totalCount))
+                {
+                    // If count could not be parsed, continue to next line.
+                    continue;
+                }
 
                 // Print count against password.
                 Console.WriteLine($"{totalCount}:{passBuffer}");
