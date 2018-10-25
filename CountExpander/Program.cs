@@ -34,13 +34,16 @@ namespace CountExpander
             var lines = FileUtils.ReadFileAsLines(args[0]);
             foreach (var line in lines)
             {
+                // Trim leading space.
+                var trimmed = line.TrimStart();
+
                 // Buffer count and password.
                 var countBuffer = "";
                 var passBuffer = "";
 
                 // Put count and password into buffers.
                 var inCountBuffer = true;
-                foreach (var chr in line)
+                foreach (var chr in trimmed)
                 {
                     if (char.IsDigit(chr) && inCountBuffer)
                     {
@@ -72,7 +75,7 @@ namespace CountExpander
                 }
 
                 // Print count against password.
-                Console.WriteLine($"{totalCount}:{passBuffer}");
+                // Console.WriteLine($"{totalCount}:{passBuffer}");
 
                 // Write password to output `count` times.
                 for (int i = 0; i < totalCount; i++)
